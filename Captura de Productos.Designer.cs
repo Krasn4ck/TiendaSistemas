@@ -52,7 +52,6 @@
             this.DirDatasheet = new System.Windows.Forms.TextBox();
             this.AddPdf = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.Description = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.FamilyProduct = new System.Windows.Forms.Label();
@@ -60,13 +59,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.StockMaxim = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchProd = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.AddRadio = new System.Windows.Forms.RadioButton();
             this.EditRadio = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Erasebutton = new System.Windows.Forms.Button();
             this.Updatebutton = new System.Windows.Forms.Button();
+            this.Erasebutton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -293,17 +293,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(417, 541);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 41);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // Description
             // 
             this.Description.AutoSize = true;
@@ -367,18 +356,19 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(22, 66);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(193, 21);
+            this.label10.Size = new System.Drawing.Size(124, 21);
             this.label10.TabIndex = 28;
-            this.label10.Text = "Editar Producto Existente:  ";
+            this.label10.Text = "Editar Producto: ";
+            this.label10.Visible = false;
             // 
-            // textBox1
+            // SearchProd
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(262, 57);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 29);
-            this.textBox1.TabIndex = 29;
+            this.SearchProd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchProd.Location = new System.Drawing.Point(262, 57);
+            this.SearchProd.Multiline = true;
+            this.SearchProd.Name = "SearchProd";
+            this.SearchProd.Size = new System.Drawing.Size(260, 29);
+            this.SearchProd.TabIndex = 29;
             // 
             // button4
             // 
@@ -390,6 +380,7 @@
             this.button4.TabIndex = 30;
             this.button4.Text = "Buscar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // AddRadio
             // 
@@ -410,10 +401,10 @@
             this.EditRadio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditRadio.Location = new System.Drawing.Point(159, 15);
             this.EditRadio.Name = "EditRadio";
-            this.EditRadio.Size = new System.Drawing.Size(157, 19);
+            this.EditRadio.Size = new System.Drawing.Size(110, 19);
             this.EditRadio.TabIndex = 32;
             this.EditRadio.TabStop = true;
-            this.EditRadio.Text = "Editar Producto Existente";
+            this.EditRadio.Text = "Editar Producto ";
             this.EditRadio.UseVisualStyleBackColor = true;
             this.EditRadio.CheckedChanged += new System.EventHandler(this.EditRadio_CheckedChanged);
             // 
@@ -429,27 +420,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selecciona una opcion:";
             // 
-            // Erasebutton
-            // 
-            this.Erasebutton.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.Erasebutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Erasebutton.Location = new System.Drawing.Point(618, 544);
-            this.Erasebutton.Name = "Erasebutton";
-            this.Erasebutton.Size = new System.Drawing.Size(148, 40);
-            this.Erasebutton.TabIndex = 34;
-            this.Erasebutton.Text = "Eliminar Producto";
-            this.Erasebutton.UseVisualStyleBackColor = false;
-            // 
             // Updatebutton
             // 
             this.Updatebutton.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Updatebutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Updatebutton.Location = new System.Drawing.Point(618, 493);
+            this.Updatebutton.Image = ((System.Drawing.Image)(resources.GetObject("Updatebutton.Image")));
+            this.Updatebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Updatebutton.Location = new System.Drawing.Point(589, 498);
             this.Updatebutton.Name = "Updatebutton";
-            this.Updatebutton.Size = new System.Drawing.Size(154, 40);
-            this.Updatebutton.TabIndex = 35;
+            this.Updatebutton.Size = new System.Drawing.Size(183, 40);
+            this.Updatebutton.TabIndex = 43;
             this.Updatebutton.Text = "Actualizar Producto";
+            this.Updatebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Updatebutton.UseVisualStyleBackColor = false;
+            // 
+            // Erasebutton
+            // 
+            this.Erasebutton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Erasebutton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Erasebutton.Image = ((System.Drawing.Image)(resources.GetObject("Erasebutton.Image")));
+            this.Erasebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Erasebutton.Location = new System.Drawing.Point(597, 544);
+            this.Erasebutton.Name = "Erasebutton";
+            this.Erasebutton.Size = new System.Drawing.Size(175, 40);
+            this.Erasebutton.TabIndex = 42;
+            this.Erasebutton.Text = "Eliminar Producto";
+            this.Erasebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Erasebutton.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(442, 541);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(109, 41);
+            this.button3.TabIndex = 44;
+            this.button3.Text = "Cancelar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // CapturaProductos
             // 
@@ -458,11 +469,12 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(784, 596);
             this.ControlBox = false;
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.Updatebutton);
             this.Controls.Add(this.Erasebutton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchProd);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.StockMaxim);
             this.Controls.Add(this.label9);
@@ -470,7 +482,6 @@
             this.Controls.Add(this.FamilyProduct);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.Description);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.AddPdf);
             this.Controls.Add(this.DirDatasheet);
@@ -529,7 +540,6 @@
         private System.Windows.Forms.TextBox DirDatasheet;
         private System.Windows.Forms.Button AddPdf;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label Description;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label FamilyProduct;
@@ -537,12 +547,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox StockMaxim;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchProd;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.RadioButton AddRadio;
         private System.Windows.Forms.RadioButton EditRadio;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Erasebutton;
         private System.Windows.Forms.Button Updatebutton;
+        private System.Windows.Forms.Button Erasebutton;
+        private System.Windows.Forms.Button button3;
     }
 }

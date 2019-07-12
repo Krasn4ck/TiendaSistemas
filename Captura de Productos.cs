@@ -37,12 +37,20 @@ namespace TiendaElectronica
         {
             Erasebutton.Visible = false;
             Updatebutton.Visible = false;
+            label10.Visible = false;
+            SearchProd.Visible = false;
+            button4.Visible = false;
         }
 
         private void EditRadio_CheckedChanged(object sender, EventArgs e)
         {
             Erasebutton.Visible = true;
             Updatebutton.Visible = true;
+            label10.Visible = true;
+            SearchProd.Visible = true;
+            button4.Visible = true;
         }
+
+     
     }
 }
