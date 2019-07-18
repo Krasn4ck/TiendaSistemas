@@ -32,10 +32,12 @@ namespace TiendaElectronica
                 timer1.Stop();
                 Counter.Text = BarProgresss.Value.ToString() + "%";
                 this.Hide();
-                CapturaProductos Instant = new CapturaProductos();
-                VentanaVenta Create = new VentanaVenta();
-                Create.Show();
-                Instant.Show();
+                ///CapturaProductos Instant = new CapturaProductos();
+                ///VentanaVenta Create = new VentanaVenta();
+                ///Create.Show();
+                ///Instant.Show();
+                PanelGeneral panelGeneral = new PanelGeneral();
+                panelGeneral.Show();
             }
         }
 
